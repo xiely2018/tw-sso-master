@@ -1,0 +1,192 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.tongwei</groupId>
+    <artifactId>tw-sso</artifactId>
+    <version>0.1</version>
+  </parent>
+  <artifactId>sso-server</artifactId>
+  <packaging>war</packaging>
+  
+  <dependencies>
+  	<!-- 引入common包 -->
+  	<dependency>
+  		<groupId>com.tongwei</groupId>
+	    <artifactId>sso-common</artifactId>
+	    <version>0.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.tongwei</groupId>
+	    <artifactId>service-aliyun</artifactId>
+	    <version>0.1</version>
+  	</dependency>
+  	
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+    </dependency>
+	
+	<dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+    </dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	</dependency>
+	
+	<dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+        <scope>provided</scope>
+    </dependency>
+    
+    <!--mybatis-->
+	<dependency>
+	    <groupId>org.mybatis.spring.boot</groupId>
+	    <artifactId>mybatis-spring-boot-starter</artifactId>
+	</dependency>
+	<!--mapper-->
+	<dependency>
+	    <groupId>tk.mybatis</groupId>
+	    <artifactId>mapper-spring-boot-starter</artifactId>
+	</dependency>
+	<!--pagehelper-->
+	<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper-spring-boot-starter</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>javax.persistence</groupId>
+		<artifactId>persistence-api</artifactId>
+	</dependency>
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+    </dependency>
+    <dependency>  
+        <groupId>mysql</groupId>  
+        <artifactId>mysql-connector-java</artifactId>  
+    </dependency>
+    <dependency>  
+        <groupId>com.alibaba</groupId>  
+        <artifactId>druid</artifactId>  
+    </dependency>
+    
+    <!-- 阿里服务sdk及依赖 -->
+	<dependency>
+        <groupId>com.aliyun.alicom</groupId>
+        <artifactId>alicom-mns-receive-sdk</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/alicom-mns-receive-sdk-0.0.1-SNAPSHOT.jar</systemPath>
+    </dependency>	
+	<dependency>
+        <groupId>com.aliyun</groupId>
+        <artifactId>aliyun-java-sdk-core</artifactId>
+        <version>3.2.3</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/aliyun-java-sdk-core-3.2.3.jar</systemPath>
+    </dependency>
+	<dependency>
+        <groupId>com.aliyun</groupId>
+        <artifactId>aliyun-java-sdk-dybaseapi</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/aliyun-java-sdk-dybaseapi-1.0.0-SNAPSHOT.jar</systemPath>
+    </dependency>
+	<dependency>
+        <groupId>com.aliyun</groupId>
+        <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+        <version>1.0.0</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/aliyun-java-sdk-dysmsapi-1.0.0.jar</systemPath>
+    </dependency>
+	<dependency>
+        <groupId>com.aliyun.mns</groupId>
+        <artifactId>aliyun-sdk-mns</artifactId>
+        <version>1.1.8</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/aliyun-sdk-mns-1.1.8.jar</systemPath>
+    </dependency>
+    <!-- 测试 -->
+    <!-- 单元测试 -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>com.ning</groupId>
+	    <artifactId>async-http-client</artifactId>
+	    <version>1.9.32</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpmime</artifactId>
+	     <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpcore</artifactId>
+	    <scope>test</scope>
+	</dependency> 
+  </dependencies>
+  
+  <!-- build -->
+  <build>
+  	<resources>
+		<resource>
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*.properties</include>
+				<include>**/*.yml</include>
+				<include>**/*.xml</include>
+			</includes>
+			<filtering>true</filtering>
+		</resource>
+		<resource>
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/**</include>
+			</includes>
+			<filtering>true</filtering>
+		</resource>
+	</resources>
+	<plugins>
+		<plugin>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-maven-plugin</artifactId>
+	        <configuration>
+	            <fork>true</fork>
+	        </configuration>
+		</plugin>
+	</plugins>
+  </build>
+</project>
